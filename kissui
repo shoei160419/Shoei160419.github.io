@@ -1,0 +1,3125 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08070d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+
+<title>MAGIA ACADEMY — Halloween Special</title>
+
+<style>
+:root{
+  --bg:#08070d;
+  --panel:#11101a;
+  --panel2:#171521;
+  --panel3:#0d0b13;
+  --gold:#e8c77a;
+  --gold2:#b9954c;
+  --purple:#8f6bc7;
+  --purple2:#5d4389;
+  --text:#f6f1e5;
+  --muted:#aaa4b5;
+  --red:#a43d4b;
+  --green:#7fc69a;
+  --blue:#75b9e8;
+  --line:#2c2838;
+  --shadow:#000b;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 50% -10%,#30243f 0,#100d18 38%,#07060b 75%);
+  color:var(--text);
+  font-family:
+    Georgia,
+    "Times New Roman",
+    "Hiragino Mincho ProN",
+    serif;
+  min-height:100vh;
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+button{
+  -webkit-tap-highlight-color:transparent;
+}
+
+.screen{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+.shell{
+  width:min(820px,100%);
+  min-height:calc(100vh - 48px);
+  border:1px solid #40384d;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(22,19,32,.97),
+      rgba(8,7,13,.99)
+    );
+  box-shadow:
+    0 20px 70px #000b,
+    0 0 80px #6f4ba811;
+  border-radius:22px;
+  overflow:hidden;
+  position:relative;
+}
+
+.hidden{
+  display:none!important;
+}
+
+/* HEADER */
+
+.top{
+  padding:14px 18px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  background:#0d0b13e8;
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter:blur(14px);
+}
+
+.brand{
+  letter-spacing:.12em;
+  font-size:12px;
+  color:var(--gold);
+  white-space:nowrap;
+}
+
+.timer-wrap{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.timer{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-weight:800;
+  color:#fff;
+  font-size:20px;
+  letter-spacing:.04em;
+}
+
+.timer.warn{
+  color:#ef7c7c;
+  animation:pulseTimer 1s infinite;
+}
+
+.timer.danger{
+  color:#ff465c;
+  animation:pulseTimer .5s infinite;
+}
+
+@keyframes pulseTimer{
+  50%{opacity:.45}
+}
+
+/* CONTENT */
+
+.content{
+  padding:30px 24px 42px;
+}
+
+.crest{
+  font-size:64px;
+  text-align:center;
+  margin:18px;
+  filter:drop-shadow(0 0 20px #8d6ac955);
+}
+
+.kicker{
+  text-align:center;
+  color:var(--gold);
+  letter-spacing:.2em;
+  font-size:11px;
+  text-transform:uppercase;
+}
+
+.title{
+  text-align:center;
+  font-size:clamp(40px,9vw,78px);
+  line-height:.95;
+  letter-spacing:.08em;
+  margin:10px 0 20px;
+  text-shadow:0 0 30px #a57aef33;
+}
+
+.subtitle{
+  text-align:center;
+  color:var(--muted);
+  margin:0 auto 30px;
+  line-height:1.8;
+}
+
+h1,h2,h3{
+  line-height:1.25;
+}
+
+h2{
+  margin-top:8px;
+}
+
+.card{
+  background:
+    linear-gradient(
+      180deg,
+      #171420,
+      #100e16
+    );
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px;
+  margin:12px 0;
+  box-shadow:0 10px 30px #0005;
+}
+
+.card.glow{
+  border-color:#5b4677;
+  box-shadow:
+    0 0 0 1px #8c69ba22,
+    0 15px 40px #0007,
+    0 0 40px #7b54a611;
+}
+
+.card.gold{
+  border-color:#6d572e;
+}
+
+.btn{
+  display:block;
+  width:100%;
+  border:1px solid var(--gold2);
+  background:
+    linear-gradient(
+      180deg,
+      #3a2d42,
+      #1b1722
+    );
+  color:var(--text);
+  padding:14px 16px;
+  border-radius:12px;
+  cursor:pointer;
+  transition:.2s;
+  margin-top:12px;
+  min-height:48px;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+  border-color:var(--gold);
+  box-shadow:0 8px 24px #0008;
+}
+
+.btn:active{
+  transform:translateY(0);
+}
+
+.btn.primary{
+  background:
+    linear-gradient(
+      180deg,
+      #8e7040,
+      #5b4528
+    );
+  color:#fff9e9;
+}
+
+.btn.purple{
+  background:
+    linear-gradient(
+      180deg,
+      #684c8d,
+      #342447
+    );
+  border-color:#9d78ce;
+}
+
+.btn.danger{
+  border-color:#81404b;
+  color:#f5a3aa;
+}
+
+.btn.ghost{
+  background:#ffffff06;
+  border-color:var(--line);
+}
+
+.btn.small{
+  width:auto;
+  display:inline-block;
+  padding:9px 12px;
+  min-height:auto;
+  font-size:13px;
+}
+
+.btn:disabled{
+  opacity:.4;
+  cursor:not-allowed;
+  transform:none;
+  box-shadow:none;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+
+.grid6{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+
+.navgrid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.nav{
+  min-height:108px;
+  border:1px solid var(--line);
+  background:#12101a;
+  border-radius:15px;
+  padding:15px;
+  text-align:left;
+  color:#fff;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.nav:hover{
+  border-color:#635174;
+  background:#181522;
+  transform:translateY(-1px);
+}
+
+.nav strong{
+  display:block;
+  color:var(--gold);
+  margin-top:8px;
+}
+
+.nav small{
+  color:var(--muted);
+  display:block;
+  margin-top:4px;
+}
+
+/* FORM */
+
+.label{
+  font-size:11px;
+  color:var(--muted);
+  letter-spacing:.12em;
+  display:block;
+}
+
+.input{
+  width:100%;
+  padding:13px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#090810;
+  color:#fff;
+  outline:none;
+  margin-top:7px;
+}
+
+.input:focus{
+  border-color:var(--gold2);
+  box-shadow:0 0 0 3px #b9954c12;
+}
+
+select.input{
+  color:#fff;
+}
+
+/* TEXT */
+
+.role{
+  font-size:20px;
+  color:var(--gold);
+  margin:6px 0;
+}
+
+.desc{
+  color:#d0cad8;
+  line-height:1.7;
+  font-size:14px;
+}
+
+.center{
+  text-align:center;
+}
+
+.big{
+  font-size:28px;
+}
+
+.muted{
+  color:var(--muted);
+}
+
+.good{
+  color:var(--green);
+}
+
+.bad{
+  color:#f07c86;
+}
+
+.blue{
+  color:var(--blue);
+}
+
+.notice{
+  border-left:3px solid var(--gold);
+  padding:10px 12px;
+  background:#fff5;
+  color:#d9d1df;
+  line-height:1.65;
+  border-radius:0 8px 8px 0;
+}
+
+.warning{
+  border-left-color:#b54a58;
+  background:#a43d4b0c;
+}
+
+.tag{
+  display:inline-block;
+  border:1px solid #4a4057;
+  border-radius:999px;
+  padding:4px 9px;
+  color:#c8bdd4;
+  font-size:11px;
+  margin:3px;
+}
+
+/* PROGRESS */
+
+.progress{
+  height:7px;
+  background:#262230;
+  border-radius:99px;
+  overflow:hidden;
+}
+
+.progress i{
+  display:block;
+  height:100%;
+  background:
+    linear-gradient(
+      90deg,
+      #8f6bc7,
+      var(--gold)
+    );
+  width:0;
+  transition:width .4s;
+}
+
+/* MAP */
+
+.maproom{
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#0d0b13;
+  text-align:center;
+  min-height:92px;
+  transition:.2s;
+}
+
+.maproom:not(.lock){
+  cursor:pointer;
+}
+
+.maproom:not(.lock):hover{
+  border-color:#69577d;
+  background:#14111c;
+  transform:translateY(-1px);
+}
+
+.maproom b{
+  display:block;
+  color:var(--gold);
+  margin:6px 0 5px;
+}
+
+.lock{
+  opacity:.45;
+}
+
+/* ITEMS */
+
+.item{
+  min-height:150px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.item.found{
+  border-color:#665132;
+}
+
+.item.locked{
+  opacity:.5;
+}
+
+/* QUEST */
+
+.quest{
+  border:1px solid var(--line);
+  background:#0d0b13;
+  border-radius:14px;
+  padding:15px;
+  margin:10px 0;
+}
+
+.quest.done{
+  border-color:#55775f;
+  background:#7fc69a08;
+}
+
+.quest-title{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:center;
+}
+
+.check{
+  color:var(--green);
+  font-weight:bold;
+}
+
+/* ROLE */
+
+.role-card{
+  min-height:160px;
+}
+
+.role-icon{
+  font-size:32px;
+}
+
+/* FINAL */
+
+.final-rune{
+  font-size:54px;
+  letter-spacing:.12em;
+  color:var(--gold);
+  margin:20px 0;
+  text-shadow:0 0 25px #e8c77a55;
+}
+
+.magic-circle{
+  width:190px;
+  height:190px;
+  margin:20px auto;
+  border:1px solid #9b79c855;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  box-shadow:
+    0 0 40px #8f6bc722,
+    inset 0 0 40px #8f6bc711;
+}
+
+.magic-circle:before{
+  content:"";
+  position:absolute;
+  width:145px;
+  height:145px;
+  border:1px dashed #e8c77a66;
+  border-radius:50%;
+}
+
+.magic-circle span{
+  font-size:54px;
+  position:relative;
+  z-index:2;
+}
+
+/* TOAST */
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:22px;
+  transform:translateX(-50%);
+  background:#15111d;
+  border:1px solid #5c4b6d;
+  padding:11px 16px;
+  border-radius:999px;
+  box-shadow:0 10px 30px #000a;
+  z-index:200;
+  max-width:90vw;
+  text-align:center;
+}
+
+/* MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:#000b;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal-box{
+  width:min(560px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:#11101a;
+  border:1px solid #4a4057;
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 30px 80px #000;
+}
+
+/* QR */
+
+.scanner{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  background:#050509;
+  position:relative;
+}
+
+#qrVideo{
+  width:100%;
+  display:block;
+  max-height:380px;
+  object-fit:cover;
+}
+
+.scan-frame{
+  position:absolute;
+  inset:15%;
+  border:2px solid var(--gold);
+  box-shadow:
+    0 0 0 999px #0005,
+    0 0 25px #e8c77a55;
+  pointer-events:none;
+}
+
+/* TABLE */
+
+.code-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+}
+
+.code-table th,
+.code-table td{
+  border-bottom:1px solid var(--line);
+  padding:10px 7px;
+  text-align:left;
+}
+
+.code-table th{
+  color:var(--gold);
+}
+
+/* FOOTER */
+
+.footer{
+  text-align:center;
+  color:#777080;
+  font-size:11px;
+  padding:20px 0 0;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:600px){
+  .screen{
+    padding:0;
+    align-items:stretch;
+  }
+
+  .shell{
+    min-height:100vh;
+    border-radius:0;
+    border-left:0;
+    border-right:0;
+  }
+
+  .content{
+    padding:24px 16px 34px;
+  }
+
+  .grid6{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .grid3{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .navgrid{
+    gap:9px;
+  }
+
+  .nav{
+    min-height:100px;
+    padding:13px;
+  }
+
+  .title{
+    font-size:clamp(40px,13vw,70px);
+  }
+
+  .brand{
+    font-size:10px;
+  }
+
+  .timer{
+    font-size:17px;
+  }
+}
+
+@media(max-width:380px){
+  .grid,
+  .navgrid{
+    grid-template-columns:1fr;
+  }
+
+  .grid3,
+  .grid6{
+    grid-template-columns:1fr 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="app" class="screen">
+  <div class="shell" id="shell"></div>
+</div>
+
+<script>
+/* ============================================================
+   MAGIA ACADEMY
+   Halloween Special
+   Standalone version
+   ============================================================ */
+
+const STORAGE_KEY = "magia_academy_v2";
+
+const roles = {
+  star:{
+    icon:"🔮",
+    name:"星読み師",
+    en:"ASTROLOGER",
+    color:"#a987df",
+    desc:"星・数字・時間に関する特別な情報を読み取る。",
+    secret:"星の塔で見つけた古い記録には「夜の三番目に光るもの」という一文がある。",
+    fragment:"星"
+  },
+
+  alchemy:{
+    icon:"🧪",
+    name:"錬金術師",
+    en:"ALCHEMIST",
+    color:"#70c9a0",
+    desc:"薬品・色・組み合わせに関する情報を扱う。",
+    secret:"銀色の薬瓶には「最初に月、次に星、最後に太陽」と刻まれている。",
+    fragment:"薬"
+  },
+
+  beast:{
+    icon:"🦉",
+    name:"魔法生物学者",
+    en:"BEAST KEEPER",
+    color:"#b8a168",
+    desc:"生き物・図形・探索に関する情報を見つける。",
+    secret:"黒い羽根を持つフクロウは、本館の東側を向いていた。",
+    fragment:"羽"
+  },
+
+  archive:{
+    icon:"📜",
+    name:"古代魔法研究者",
+    en:"ARCHIVIST",
+    color:"#d5a878",
+    desc:"古代文字・文章・歴史に関する情報を解読する。",
+    secret:"禁書庫の古文書に「始まりは月、導きは星、帰還は太陽」とある。",
+    fragment:"古"
+  },
+
+  spell:{
+    icon:"🪄",
+    name:"呪文使い",
+    en:"SPELL CASTER",
+    color:"#9c8fe1",
+    desc:"言葉・音・発音・並びに関する情報を扱う。",
+    secret:"卒業呪文の最初の音は「ル」。",
+    fragment:"呪"
+  },
+
+  seer:{
+    icon:"👁️",
+    name:"予言者",
+    en:"SEER",
+    color:"#8eb7df",
+    desc:"パターン・未来・推理に関する情報を見抜く。",
+    secret:"最後の扉に刻まれた予言は「六つの断片が揃った時、扉は開く」。",
+    fragment:"門"
+  }
+};
+
+const defaultState = {
+  screen:"home",
+  team:"",
+  player:"",
+  role:"star",
+  started:false,
+  time:1800,
+  solved:0,
+  items:[],
+  discoveredCodes:[],
+  quests:{},
+  hintsUsed:0,
+  finalUnlocked:false,
+  graduated:false,
+  notificationAsked:false,
+  startedAt:null
+};
+
+let state = {...defaultState};
+let timerInterval = null;
+let scannerStream = null;
+let scannerInterval = null;
+
+load();
+
+/* ============================================================
+   STORAGE
+   ============================================================ */
+
+function save(){
+  const copy = {...state};
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(copy));
+}
+
+function load(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+
+    if(raw){
+      state = {
+        ...defaultState,
+        ...JSON.parse(raw)
+      };
+    }
+  }catch(e){
+    console.warn("Save data could not be loaded.",e);
+  }
+}
+
+/* ============================================================
+   BASIC HELPERS
+   ============================================================ */
+
+function shell(){
+  return document.getElementById("shell");
+}
+
+function fmt(seconds){
+  seconds = Math.max(0,Number(seconds)||0);
+
+  return (
+    String(Math.floor(seconds/60)).padStart(2,"0")
+    + ":"
+    + String(seconds%60).padStart(2,"0")
+  );
+}
+
+function esc(value){
+  return String(value ?? "").replace(
+    /[&<>"']/g,
+    m=>({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#39;"
+    }[m])
+  );
+}
+
+function progressPercent(){
+  return Math.min(100,state.solved * 25);
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+
+function go(screen){
+  stopScanner();
+  state.screen = screen;
+  save();
+  render();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+function header(){
+
+  if(!state.started){
+    return "";
+  }
+
+  let timerClass = "";
+
+  if(state.time <= 60){
+    timerClass = "danger";
+  }else if(state.time <= 300){
+    timerClass = "warn";
+  }
+
+  return `
+    <div class="top">
+      <div class="brand">
+        🪄 MAGIA ACADEMY
+      </div>
+
+      <div class="timer-wrap">
+        <span class="muted">残り</span>
+        <div class="timer ${timerClass}" id="timer">
+          ${fmt(state.time)}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+
+function render(){
+
+  let body = "";
+
+  switch(state.screen){
+
+    case "home":
+      body = homePage();
+      break;
+
+    case "about":
+      body = aboutPage();
+      break;
+
+    case "enroll":
+      body = enrollPage();
+      break;
+
+    case "role":
+      body = rolePage();
+      break;
+
+    case "game":
+      body = gamePage();
+      break;
+
+    case "map":
+      body = mapPage();
+      break;
+
+    case "archive":
+      body = archivePage();
+      break;
+
+    case "items":
+      body = itemsPage();
+      break;
+
+    case "quests":
+      body = questsPage();
+      break;
+
+    case "exam":
+      body = examPage();
+      break;
+
+    case "qr":
+      body = qrPage();
+      break;
+
+    case "hint":
+      body = hintPage();
+      break;
+
+    case "final":
+      body = finalPage();
+      break;
+
+    case "grad":
+      body = gradPage();
+      break;
+
+    case "settings":
+      body = settingsPage();
+      break;
+
+    default:
+      body = homePage();
+  }
+
+  shell().innerHTML = header() + body;
+
+  updateTimer();
+}
+
+/* ============================================================
+   HOME
+   ============================================================ */
+
+function homePage(){
+
+  return `
+    <div class="content center">
+
+      <div class="crest">🦉</div>
+
+      <div class="kicker">
+        Halloween Special
+      </div>
+
+      <h1 class="title">
+        MAGIA<br>ACADEMY
+      </h1>
+
+      <p class="subtitle">
+        迷い込んだ先は、卒業しなければ帰れない魔法学校だった。<br>
+        <b>30 MINUTES TO GRADUATE.</b>
+      </p>
+
+      <button class="btn primary" onclick="go('enroll')">
+        🎓 入学する
+      </button>
+
+      <button class="btn ghost" onclick="go('about')">
+        世界観を見る
+      </button>
+
+      <button class="btn ghost" onclick="resumeGame()">
+        📖 前回の続き
+      </button>
+
+      <div class="footer">
+        MAGIA ACADEMY / HALLOWEEN SPECIAL
+      </div>
+
+    </div>
+  `;
+}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+
+function aboutPage(){
+
+  return `
+    <div class="content">
+
+      <div class="kicker">The Story</div>
+
+      <h2>
+        30分後、あなたは魔法使いになっている。
+      </h2>
+
+      <div class="card glow">
+
+        <p class="desc">
+          ハロウィンの夜、あなたたちは大学キャンパスにある
+          古い扉を開いてしまった。
+          次の瞬間、そこは魔法学院
+          「MAGIA ACADEMY」だった。
+        </p>
+
+        <p class="desc">
+          元の世界へ帰る方法はひとつ。
+          6人全員で卒業試験を突破し、
+          失われた卒業魔法を完成させること。
+        </p>
+
+        <div class="notice">
+          キャンパスに隠された情報を探し、
+          QRコードや謎を解き、
+          6人それぞれが持つ秘密の情報を
+          最後に一つへつなげよう。
+        </div>
+
+      </div>
+
+      <div class="grid">
+
+        <div class="card center">
+          <div class="big">⏱️</div>
+          <b>30 MINUTES</b>
+          <p class="muted">時間制限</p>
+        </div>
+
+        <div class="card center">
+          <div class="big">👥</div>
+          <b>6 ROLES</b>
+          <p class="muted">6つの魔法適性</p>
+        </div>
+
+        <div class="card center">
+          <div class="big">🗺️</div>
+          <b>EXPLORE</b>
+          <p class="muted">キャンパス探索</p>
+        </div>
+
+        <div class="card center">
+          <div class="big">👑</div>
+          <b>GRADUATE</b>
+          <p class="muted">卒業試験</p>
+        </div>
+
+      </div>
+
+      <button class="btn primary" onclick="go('enroll')">
+        入学手続きへ
+      </button>
+
+      <button class="btn ghost" onclick="go('home')">
+        ← 戻る
+      </button>
+
+    </div>
+  `;
+}
+
+/* ============================================================
+   ENROLL
+   ============================================================ */
+
+function enrollPage(){
+
+  return `
+    <div class="content">
+
+      <div class="kicker">Enrollment</div>
+
+      <h2>魔法学院 入学手続き</h2>
+
+      <div class="card glow">
+
+        <label class="label">
+          YOUR NAME
+        </label>
+
+        <input
+          id="player"
+          class="input"
+          maxlength="20"
+          autocomplete="nickname"
+          placeholder="例：YOSHI"
+          value="${esc(state.player)}"
+        >
+
+        <label
+          class="label"
+          style="margin-top:18px"
+        >
+          TEAM
+        </label>
+
+        <select id="team" class="input">
+          ${Array.from({length:7},(_,i)=>`
+            <option
+              value="${i+1}"
+              ${String(state.team)==String(i+1)?"selected":""}
+            >
+              TEAM ${String(i+1).padStart(2,"0")}
+            </option>
+          `).join("")}
+        </select>
+
+      </div>
+
+      <div class="notice">
+        ⚠️ 本番では、同じチームのメンバー全員が
+        それぞれ別の魔法適性を担当してください。
+      </div>
+
+      <button class="btn primary" onclick="enroll()">
+        次へ — 魔法適性を確認
+      </button>
+
+      <button class="btn ghost" onclick="go('home')">
+        ← 戻る
+      </button>
+
+    </div>
+  `;
+}
+
+function enroll(){
+
+  const player =
+    document.getElementById("player").value.trim();
+
+  const team =
+    document.getElementById("team").value;
+
+  state.player = player || "新入生";
+  state.team = team;
+
+  go("role");
+}
+
+/* ============================================================
+   ROLE
+   ============================================================ */
+
+function rolePage(){
+
+  return `
+    <div class="content">
+
+      <div class="kicker">
+        Magical Aptitude
+      </div>
+
+      <h2>
+        あなたの魔法適性
+      </h2>
+
+      <p class="muted">
+        6人全員が異なる魔法を持ちます。
+        自分だけに見える情報が、卒業の鍵になります。
+      </p>
+
+      <div class="grid">
+
+        ${Object.entries(roles).map(([key,r])=>`
+
+          <button
+            class="nav role-card"
+            onclick="chooseRole('${key}')"
+          >
+
+            <span
+              class="role-icon"
+              style="color:${r.color}"
+            >
+              ${r.icon}
+            </span>
+
+            <strong>
+              ${r.name}
+            </strong>
+
+            <small>
+              ${r.en}
+            </small>
+
+            <small style="margin-top:8px">
+              ${r.desc}
+            </small>
+
+          </button>
+
+        `).join("")}
+
+      </div>
+
+      <div class="notice">
+        🔮 選択した役割は、この端末では
+        あなたの秘密情報として扱われます。
+      </div>
+
+    </div>
+  `;
+}
+
+async function chooseRole(key){
+
+  state.role = key;
+  state.started = true;
+
+  if(!state.startedAt){
+    state.startedAt = Date.now();
+  }
+
+  await enableNotifications();
+
+  startTimer();
+
+  save();
+
+  go("game");
+}
+
+/* ============================================================
+   TIMER
+   ============================================================ */
+
+function startTimer(){
+
+  if(timerInterval){
+    return;
+  }
+
+  timerInterval = setInterval(()=>{
+
+    if(!state.started || state.graduated){
+      return;
+    }
+
+    if(state.time > 0){
+
+      state.time--;
+
+      updateTimer();
+
+      if(state.time === 300){
+        notify(
+          "🕯️ MAGIA ACADEMY",
+          "残り5分です。卒業魔法を完成させてください。"
+        );
+
+        toast("🕯️ 残り5分！");
+      }
+
+      if(state.time === 60){
+        notify(
+          "⚠️ MAGIA ACADEMY",
+          "残り1分です。最終試験へ急いでください。"
+        );
+
+        toast("⚠️ 残り1分！");
+      }
+
+      save();
+
+    }else{
+
+      clearInterval(timerInterval);
+      timerInterval = null;
+
+      notify(
+        "⏳ MAGIA ACADEMY",
+        "最終ベルが鳴りました。制限時間終了です。"
+      );
+
+      toast("⏳ 最終ベルが鳴りました。");
+
+    }
+
+  },1000);
+}
+
+function updateTimer(){
+
+  const timer = document.getElementById("timer");
+
+  if(!timer){
+    return;
+  }
+
+  timer.textContent = fmt(state.time);
+
+  timer.classList.remove(
+    "warn",
+    "danger"
+  );
+
+  if(state.time <= 60){
+    timer.classList.add("danger");
+  }else if(state.time <= 300){
+    timer.classList.add("warn");
+  }
+}
+
+/* ============================================================
+   NOTIFICATION
+   ============================================================ */
+
+async function enableNotifications(){
+
+  if(!("Notification" in window)){
+    return false;
+  }
+
+  if(Notification.permission === "granted"){
+    state.notificationAsked = true;
+    return true;
+  }
+
+  if(Notification.permission === "denied"){
+    return false;
+  }
+
+  try{
+
+    const permission =
+      await Notification.requestPermission();
+
+    state.notificationAsked = true;
+
+    if(permission === "granted"){
+      toast("🔔 デスクトップ通知を有効にしました。");
+      return true;
+    }
+
+  }catch(e){
+    console.warn(e);
+  }
+
+  return false;
+}
+
+function notify(title,body){
+
+  if(
+    "Notification" in window &&
+    Notification.permission === "granted"
+  ){
+
+    try{
+
+      new Notification(title,{
+        body:body,
+        icon:"data:image/svg+xml;charset=UTF-8," +
+          encodeURIComponent(`
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="128"
+              height="128"
+            >
+              <rect
+                width="128"
+                height="128"
+                rx="24"
+                fill="#171420"
+              />
+              <text
+                x="64"
+                y="84"
+                text-anchor="middle"
+                font-size="62"
+              >
+                🦉
+              </text>
+            </svg>
+          `)
+      });
+
+    }catch(e){
+      console.warn(e);
+    }
+  }
+}
+
+/* ============================================================
+   GAME DASHBOARD
+   ============================================================ */
+
+function gamePage(){
+
+  const r = roles[state.role];
+
+  return `
+    <div class="content">
+
+      <div class="kicker">
+        Student Dashboard
+      </div>
+
+      <div class="card glow">
+
+        <span class="tag">
+          TEAM ${String(state.team).padStart(2,"0")}
+        </span>
+
+        <span class="tag">
+          ${r.icon} ${r.name}
+        </span>
+
+        <h2>
+          ようこそ、${esc(state.player)}。
+        </h2>
+
+        <p class="desc">
+          ${r.desc}
+        </p>
+
+        <div class="progress">
+          <i style="width:${progressPercent()}%"></i>
+        </div>
+
+        <p class="muted">
+          攻略進行：
+          ${state.solved}/4
+        </p>
+
+      </div>
+
+      <div class="card gold">
+
+        <div class="kicker">
+          SECRET ROLE INFORMATION
+        </div>
+
+        <h3>
+          ${r.icon} ${r.name}だけが知る情報
+        </h3>
+
+        <p class="desc">
+          ${r.secret}
+        </p>
+
+        <span class="tag">
+          魔導片：${r.fragment}
+        </span>
+
+      </div>
+
+      <div class="navgrid">
+
+        <button class="nav" onclick="go('map')">
+          🗺️
+          <strong>魔法学校MAP</strong>
+          <small>キャンパスを探索する</small>
+        </button>
+
+        <button class="nav" onclick="go('qr')">
+          📷
+          <strong>QR探索</strong>
+          <small>発見したコードを解読</small>
+        </button>
+
+        <button class="nav" onclick="go('archive')">
+          📜
+          <strong>魔法書</strong>
+          <small>発見した情報</small>
+        </button>
+
+        <button class="nav" onclick="go('items')">
+          🎒
+          <strong>アイテム</strong>
+          <small>所持品を確認</small>
+        </button>
+
+        <button class="nav" onclick="go('quests')">
+          🧭
+          <strong>探索クエスト</strong>
+          <small>進行状況</small>
+        </button>
+
+        <button class="nav" onclick="go('exam')">
+          🧩
+          <strong>魔法試験</strong>
+          <small>Web謎に挑戦</small>
+        </button>
+
+        <button class="nav" onclick="go('hint')">
+          💡
+          <strong>教師のヒント</strong>
+          <small>困ったら使う</small>
+        </button>
+
+        <button class="nav" onclick="go('final')">
+          👑
+          <strong>卒業試験</strong>
+          <small>最終魔法</small>
+        </button>
+
+      </div>
+
+      <button
+        class="btn ghost"
+        onclick="enableNotifications()"
+      >
+        🔔 デスクトップ通知を確認
+      </button>
+
+      <button
+        class="btn ghost"
+        onclick="go('settings')"
+      >
+        ⚙️ 設定
+      </button>
+
+    </div>
+  `;
+}
+
+/* ============================================================
+   MAP
+   ============================================================ */
+
+const mapLocations = [
+  {
+    id:"main",
+    icon:"🏰",
+    name:"本館",
+    desc:"入学・卒業",
+    code:"MAGIA-MAIN"
+  },
+  {
+    id:"lab",
+    icon:"🧪",
+    name:"研究棟",
+    desc:"錬金術",
+    code:"MAGIA-LAB"
+  },
+  {
+    id:"tower",
+    icon:"🔮",
+    name:"占星塔",
+    desc:"星読み",
+    code:"MAGIA-STAR"
+  },
+  {
+    id:"library",
+    icon:"📚",
+    name:"禁書庫",
+    desc:"図書館",
+    code:"MAGIA-BOOK"
+  },
+  {
+    id:"cafeteria",
+    icon:"🍽️",
+    name:"魔法食堂",
+    desc:"食の魔法",
+    code:"MAGIA-FOOD"
+  },
+  {
+    id:"office",
+    icon:"👑",
+    name:"校長室",
+    desc:"最終試験",
+    code:"MAGIA-HEAD"
+  }
+];
+
+function mapPage(){
+
+  return `
+    <div class="content">
+
+      <div class="kicker">
+        Campus Map
+      </div>
+
+      <h2>🏰 MAGIA ACADEMY</h2>
+
+      <p class="muted">
+        大学キャンパスが一夜だけ魔法学校になります。
+        指定された場所へ実際に移動し、
+        QRコードやカードを探してください。
+      </p>
+
+      <div class="grid3">
+
+        ${mapLocations.map(loc=>`
+
+          <div
+            class="maproom"
+            onclick="mapLocation('${loc.id}')"
+          >
+
+            <div style="font-size:25px">
+              ${loc.icon}
+            </div>
+
+            <b>
+              ${loc.name}
+            </b>
+
+            <small>
+              ${loc.desc}
+            </small>
+
+          </div>
+
+        `).join("")}
+
+      </div>
+
+      <div class="card">
+
+        <div class="notice">
+          本番では各地点にQRコードを配置できます。
+          コードを読み込むと、その地点の秘密情報が
+          「魔法書」に追加されます。
+        </div>
+
+      </div>
+
+      <button class="btn primary" onclick="go('qr')">
+        📷 QRコードを読み取る
+      </button>
+
+      <button class="btn ghost" onclick="go('game')">
+        ← 戻る
+      </button>
+
+    </div>
+  `;
+}
+
+function mapLocation(id){
+
+  const loc =
+    mapLocations.find(x=>x.id===id);
+
+  if(!loc){
+    return;
+  }
+
+  toast(
+    `${loc.icon} ${loc.name}：現地を探索してください。`
+  );
+}
+
+/* ============================================================
+   QR
+   ============================================================ */
+
+const qrData = {
+
+  "MAGIA-MAIN":{
+    title:"本館の記録",
+    body:"本館の壁には「卒業とは、始まりへ帰ること」と刻まれている。",
+    item:"🏛️ 本館の紋章"
+  },
+
+  "MAGIA-LAB":{
+    title:"研究棟の記録",
+    body:"研究棟では、銀・紫・金の3色が魔法の順序を示している。",
+    item:"🧪 三色の試薬"
+  },
+
+  "MAGIA-STAR":{
+    title:"占星塔の記録",
+    body:"星読みの記録には「月 → 星 → 太陽」という順序が記されている。",
+    item:"🔮 星の観測記録"
+  },
+
+  "MAGIA-BOOK":{
+    title:"禁書庫の記録",
+    body:"古代文字を解読すると「六つの断片」という言葉が現れた。",
+    item:"📜 古代魔導書"
+  },
+
+  "MAGIA-FOOD":{
+    title:"魔法食堂の記録",
+    body:"食堂の壁には「空腹の者には、甘い香りが道を示す」とある。",
+    item:"🍬 魔法菓子"
+  },
+
+  "MAGIA-HEAD":{
+    title:"校長室の記録",
+    body:"最後の扉には「六つの魔導片が揃った時、卒業魔法は完成する」とある。",
+    item:"👑 校長の印章"
+  }
+
+};
+
+function qrPage(){
+
+  return `
+    <div class="content">
+
+      <div class="kicker">
+        Magical QR Search
+      </div>
+
+      <h2>📷 魔法コードを読み取る</h2>
+
+      <div class="card">
+
+        <p class="desc">
+          現地に設置されたQRコードを読み取ってください。
+          対応ブラウザではカメラから直接読み取れます。
+        </p>
+
+        <div class="scanner hidden" id="scannerBox">
+          <video
+            id="qrVideo"
+            playsinline
+            muted
+          ></video>
+
+          <div class="scan-frame"></div>
+        </div>
+
+        <button
+          class="btn primary"
+          id="scanBtn"
+          onclick="startScanner()"
+        >
+          📷 カメラでスキャン
+        </button>
+
+        <button
+          class="btn ghost hidden"
+          id="stopScanBtn"
+          onclick="stopScanner()"
+        >
+          カメラを停止
+        </button>
+
+      </div>
+
+      <div class="card">
+
+        <label class="label">
+          CODE INPUT
+        </label>
+
+        <input
+          id="qrCodeInput"
+          class="input"
+          placeholder="例：MAGIA-STAR"
+          autocomplete="off"
+        >
+
+        <button
+          class="btn purple"
+          onclick="redeemQRCode()"
+        >
+          ✨ 魔法コードを解読
+        </button>
+
+      </div>
+
+      <div class="card">
+
+        <h3>使用できるテストコード</h3>
+
+        <table class="code-table">
+
+          <thead>
+            <tr>
+              <th>場所</th>
+              <th>コード</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            ${Object.entries(qrData).map(
+              ([code,data])=>`
+                <tr>
+                  <td>${esc(data.title)}</td>
+                  <td><code>${code}</code></td>
+                </tr>
+              `
+            ).join("")}
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <button class="btn ghost" onclick="go('game')">
+        ← 戻る
+      </button>
+
+    </div>
+  `;
+}
+
+async function startScanner(){
+
+  if(!("BarcodeDetector" in window)){
+
+    toast(
+      "このブラウザはQRカメラ読み取りに未対応です。コード入力をご利用ください。"
+    );
+
+    return;
+  }
+
+  try{
+
+    const detector =
+      new BarcodeDetector({
+        formats:["qr_code"]
+      });
+
+    scannerStream =
+      await navigator.mediaDevices.getUserMedia({
+        video:{
+          facingMode:{
+            ideal:"environment"
+          }
+        },
+        audio:false
+      });
+
+    const video =
+      document.getElementById("qrVideo");
+
+    if(!video){
+      return;
+    }
+
+    video.srcObject = scannerStream;
+
+    await video.play();
+
+    document
+      .getElementById("scannerBox")
+      ?.classList.remove("hidden");
+
+    document
+      .getElementById("scanBtn")
+      ?.classList.add("hidden");
+
+    document
+      .getElementById("stopScanBtn")
+      ?.classList.remove("hidden");
+
+    scannerInterval =
+      setInterval(async()=>{
+
+        try{
+
+          const codes =
+            await detector.detect(video);
+
+          if(codes.length){
+
+            const value =
+              codes[0].rawValue;
+
+            document.getElementById(
+              "qrCodeInput"
+            ).value = value;
+
+            redeemQRCode();
+
+            stopScanner();
+          }
+
+        }catch(e){
+          console.warn(e);
+        }
+
+      },500);
+
+  }catch(e){
+
+    console.error(e);
+
+    toast(
+      "カメラを起動できませんでした。HTTPSまたはカメラ許可を確認してください。"
+    );
+  }
+}
+
+function stopScanner(){
+
+  if(scannerInterval){
+    clearInterval(scannerInterval);
+    scannerInterval = null;
+  }
+
+  if(scannerStream){
+
+    scannerStream
+      .getTracks()
+      .forEach(track=>track.stop());
+
+    scannerStream = null;
+  }
+
+  const video =
+    document.getElementById("qrVideo");
+
+  if(video){
+    video.srcObject = null;
+  }
+}
+
+function redeemQRCode(){
+
+  const input =
+    document.getElementById("qrCodeInput");
+
+  if(!input){
+    return;
+  }
+
+  const code =
+    input.value
+      .trim()
+      .toUpperCase();
+
+  const data =
+    qrData[code];
+
+  if(!data){
+
+    toast(
+      "🪄 魔法コードが認識できません。"
+    );
+
+    return;
+  }
+
+  if(state.discoveredCodes.includes(code)){
+
+    toast(
+      "📖 この魔法記録はすでに解読済みです。"
+    );
+
+    return;
+  }
+
+  state.discoveredCodes.push(code);
+
+  state.items.push({
+    title:data.title,
+    body:data.body,
+    icon:data.item
+  });
+
+  save();
+
+  toast(
+    `✨ ${data.title}を魔法書に追加しました。`
+  );
+
+  render();
+}
+
+/* ============================================================
+   ARCHIVE
+   ============================================================ */
+
+function archivePage(){
+
+  const role = roles[state.role];
+
+  const items =
+    state.items || [];
+
+  return `
+    <div class="content">
+
+      <div class="kicker">
+        Magical Archive
+      </div>
+
+      <h2>📜 魔法書</h2>
+
+      <div class="card gold">
+
+        <span class="tag">
+          ${role.icon} ${role.name}
+        </span>
+
+        <p class="desc">
+          あなたの秘密情報：
+          ${role.secret}
+        </p>
+
+      </div>
+
+      ${
+        items.length
+        ?
+        items.map(item=>`
+
+          <div class="card">
+
+            <b>
+              ${item.icon || "📜"}
+              ${esc(item.title)}
+            </b>
+
+            <p class="desc">
+              ${esc(item.body)}
+            </p>
+
+          </div>
+
+        `).join("")
+        :
+        `
+          <div class="card center">
+
+            <div class="big">📖</div>
+
+            <p class="muted">
+              まだ発見した情報はありません。
+            </p>
+
+            <p class="desc">
+              キャンパスを探索し、
+              QRコードを見つけてください。
+            </p>
+
+          </div>
+        `
+      }
+
+      <button class="btn ghost" onclick="go('game')">
+        ← 戻る
+      </button>
+
+    </div>
+  `;
+}
+
+/* ============================================================
+   ITEMS
+   ============================================================ */
+
+function itemsPage(){
+
+  const discovered =
+    new Set(state.discoveredCodes);
+
+  const itemDefinitions = [
+
+    {
+      code:"MAGIA-MAIN",
+      icon:"🏛️",
+      name:"本館の紋章",
+      desc:"本館で発見する"
+    },
+
+    {
+      code:"MAGIA-LAB",
+      icon:"🧪",
+      name:"三色の試薬",
+      desc:"研究棟で発見する"
+    },
+
+    {
+      code:"MAGIA-STAR",
+      icon:"🔮",
+      name:"星の観測記録",
+      desc:"占星塔で発見する"
+    },
+
+    {
+      code:"MAGIA-BOOK",
+      icon:"📜",
+      name:"古代魔導書",
+      desc:"禁書庫で発見する"
+    },
+
+    {
+      code:"MAGIA-FOOD",
+      icon:"🍬",
+      name:"魔法菓子",
+      desc:"魔法食堂で発見する"
+    },
+
+    {
+      code:"MAGIA-HEAD",
+      icon:"👑",
+      name:"校長の印章",
+      desc:"校長室で発見する"
+    }
+
+  ];
+
+  return `
+    <div class="content">
+
+      <div class="kicker">
+        Inventory
+      </div>
+
+      <h2>🎒 アイテム</h2>
+
+      <div class="grid">
+
+        ${itemDefinitions.map(item=>{
+
+          const found =
+            discovered.has(item.code);
+
+          return `
+
+            <div
+              class="card item ${found?"found":"locked"}"
+            >
+
+              <div>
+                <div class="big">
+                  ${found ? item.icon : "🔒"}
+                </div>
+
+                <b>
+                  ${found ? item.name : "？？？？"}
+                </b>
+
+                <p class="muted">
+                  ${found ? item.desc : "未発見"}
+                </p>
+              </div>
+
+              <small
+                class="${found?"good":"muted"}"
+              >
+                ${found?"発見済み":"未発見"}
+              </small>
+
+            </div>
+          `;
+
+        }).join("")}
+
+      </div>
+
+      <button class="btn ghost" onclick="go('game')">
+        ← 戻る
+      </button>
+
+    </div>
+  `;
+}
+
+/* ============================================================
+   QUESTS
+   ============================================================ */
+
+function questsPage(){
+
+  const quests = [
+
+    {
+      id:"qr1",
+      title:"第一の記録",
+      desc:"QRコードを1つ発見する。",
+      done:state.discoveredCodes.length >= 1
+    },
+
+    {
+      id:"qr3",
+      title:"三つの記録",
+      desc:"QRコードを3つ発見する。",
+      done:state.discoveredCodes.length >= 3
+    },
+
+    {
+      id:"exam1",
+      title:"第一魔法試験",
+      desc:"月・星・太陽の順序を解読する。",
+      done:state.solved >= 1
+    },
+
+    {
+      id:"six",
+      title:"六つの記録",
+      desc:"6つの魔法コードをすべて発見する。",
+      done:state.discoveredCodes.length >= 6
+    }
+
+  ];
+
+  return `
+    <div class="content">
+
+      <div class="kicker">
+        Quest Log
+      </div>
+
+      <h2>🧭 探索クエスト</h2>
+
+      ${quests.map(q=>`
+
+        <div class="quest ${q.done?"done":""}">
+
+          <div class="quest-title">
+
+            <b>
+              ${q.title}
+            </b>
+
+            ${
+              q.done
+              ? `<span class="check">✓ CLEAR</span>`
+              : `<span class="muted">未達成</span>`
+            }
+
+          </div>
+
+          <p class="muted">
+            ${q.desc}
+          </p>
+
+        </div>
+
+      `).join("")}
+
+      <div class="card">
+
+        <div class="progress">
+          <i
+            style="width:${Math.min(
+              100,
+              (quests.filter(q=>q.done).length / quests.length)*100
+            )}%"
+          ></i>
+        </div>
+
+        <p class="muted">
+          ${quests.filter(q=>q.done).length}
+          /
+          ${quests.length}
+          クエスト達成
+        </p>
+
+      </div>
+
+      <button class="btn ghost" onclick="go('game')">
+        ← 戻る
+      </button>
+
+    </div>
+  `;
+}
+
+/* ============================================================
+   EXAM
+   ============================================================ */
+
+function examPage(){
+
+  const solved =
+    state.solved >= 1;
+
+  return `
+    <div class="content">
+
+      <div class="kicker">
+        Magic Examination
+      </div>
+
+      <h2>🧩 第一魔法試験</h2>
+
+      ${
+        solved
+        ?
+        `
+          <div class="card glow center">
+
+            <div class="big">✨</div>
+
+            <h3 class="good">
+              CLEAR
+            </h3>
+
+            <p class="desc">
+              第一魔法試験は突破済みです。
+            </p>
+
+          </div>
+        `
+        :
+        `
+          <div class="card">
+
+            <p class="desc">
+              【第一試験】
+            </p>
+
+            <p>
+              古い校章には、
+              <b>月・星・太陽</b>
+              の3つの印が刻まれている。
+            </p>
+
+            <p>
+              魔法書には
+              <b>「夜から朝へ」</b>
+              と記されている。
+            </p>
+
+            <p>
+              正しい順番で印を並べてください。
+            </p>
+
+            <div class="grid">
+
+              <button
+                class="btn ghost"
+                onclick="answerExam(1)"
+              >
+                🌙 → ⭐ → ☀️
+              </button>
+
+              <button
+                class="btn ghost"
+                onclick="answerExam(0)"
+              >
+                ☀️ → ⭐ → 🌙
+              </button>
+
+              <button
+                class="btn ghost"
+                onclick="answerExam(0)"
+              >
+                ⭐ → ☀️ → 🌙
+              </button>
+
+              <button
+                class="btn ghost"
+                onclick="answerExam(0)"
+              >
+                🌙 → ☀️ → ⭐
+              </button>
+
+            </div>
+
+          </div>
+        `
+      }
+
+      <div class="card">
+
+        <div class="notice">
+          ヒント：
+          「夜から朝へ」という言葉を
+          時間の流れとして考えてみよう。
+        </div>
+
+      </div>
+
+      <button class="btn ghost" onclick="go('game')">
+        ← 戻る
+      </button>
+
+    </div>
+  `;
+}
+
+function answerExam(correct){
+
+  if(!correct){
+
+    toast(
+      "🪄 魔法が不安定です。もう一度考えてみよう。"
+    );
+
+    return;
+  }
+
+  if(state.solved < 1){
+    state.solved = 1;
+  }
+
+  const already =
+    state.items.some(
+      x=>x.title==="第一試験の記録"
+    );
+
+  if(!already){
+
+    state.items.push({
+      title:"第一試験の記録",
+      body:
+        "校章の順序を解読した。『夜から朝へ』＝月 → 星 → 太陽。",
+      icon:"🧩"
+    });
+
+  }
+
+  save();
+
+  toast(
+    "✨ 試験突破！魔法書に記録しました。"
+  );
+
+  setTimeout(()=>{
+    render();
+  },300);
+}
+
+/* ============================================================
+   HINT
+   ============================================================ */
+
+function hintPage(){
+
+  const used =
+    state.hintsUsed;
+
+  return `
+    <div class="content">
+
+      <div class="kicker">
+        Professor's Hint
+      </div>
+
+      <h2>💡 教師のヒント</h2>
+
+      <div class="card">
+
+        <p class="desc">
+          ヒントは段階的に開放されます。
+          本番では運営スタッフがチームごとに
+          ヒントを解放する設計にもできます。
+        </p>
+
+      </div>
+
+      <div class="quest">
+
+        <b>HINT 1 — 無料</b>
+
+        ${
+          used >= 1
+          ?
+          `<p class="desc">
+            数字だけではなく、
+            周りの記号にも意味があります。
+          </p>`
+          :
+          `<button
+            class="btn ghost"
+            onclick="useHint(1)"
+          >
+            ヒントを見る
+          </button>`
+        }
+
+      </div>
+
+      <div class="quest">
+
+        <b>HINT 2 — もう一歩</b>
+
+        ${
+          used >= 2
+          ?
+          `<p class="desc">
+            「夜から朝へ」という言葉に
+            注目してください。
+          </p>`
+          :
+          `<button
+            class="btn ghost"
+            ${used<1?"disabled":""}
+            onclick="useHint(2)"
+          >
+            ヒントを見る
+          </button>`
+        }
+
+      </div>
+
+      <div class="quest">
+
+        <b>HINT 3 — かなり具体的</b>
+
+        ${
+          used >= 3
+          ?
+          `<p class="desc">
+            夜 → 月、
+            夜空 → 星、
+            朝 → 太陽。
+            順序をそのまま並べます。
+          </p>`
+          :
+          `<button
+            class="btn ghost"
+            ${used<2?"disabled":""}
+            onclick="useHint(3)"
+          >
+            ヒントを見る
+          </button>`
+        }
+
+      </div>
+
+      <button class="btn ghost" onclick="go('game')">
+        ← 戻る
+      </button>
+
+    </div>
+  `;
+}
+
+function useHint(n){
+
+  if(n > state.hintsUsed + 1){
+    toast("先のヒントはまだ開放されていません。");
+    return;
+  }
+
+  state.hintsUsed = Math.max(
+    state.hintsUsed,
+    n
+  );
+
+  save();
+
+  render();
+}
+
+/* ============================================================
+   FINAL
+   ============================================================ */
+
+function finalPage(){
+
+  const discovered =
+    state.discoveredCodes.length;
+
+  const enough =
+    discovered >= 6 &&
+    state.solved >= 1;
+
+  const role =
+    roles[state.role];
+
+  return `
+    <div class="content center">
+
+      <div class="kicker">
+        Final Examination
+      </div>
+
+      <div class="magic-circle">
+        <span>👑</span>
+      </div>
+
+      <h2>
+        卒業試験
+      </h2>
+
+      <div class="card">
+
+        <p class="desc">
+          ここは6人全員の情報を統合する
+          最終ステージです。
+        </p>
+
+        <p class="desc">
+          6人それぞれの魔導片を持ち寄り、
+          最後の魔法を完成させてください。
+        </p>
+
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <b>魔法記録</b>
+          <p class="big">
+            ${discovered}/6
+          </p>
+          <small class="muted">
+            QR記録
+          </small>
+        </div>
+
+        <div class="card">
+          <b>試験</b>
+          <p class="big">
+            ${state.solved}/4
+          </p>
+          <small class="muted">
+            クリア
+          </small>
+        </div>
+
+      </div>
+
+      <div class="card gold">
+
+        <div class="kicker">
+          YOUR FRAGMENT
+        </div>
+
+        <div class="final-rune">
+          ${role.fragment}
+        </div>
+
+        <p class="muted">
+          ${role.name}の魔導片
+        </p>
+
+      </div>
+
+      ${
+        enough
+        ?
+        `
+          <div class="card glow">
+
+            <div class="notice">
+              六つの記録が揃いました。
+              最終魔法を発動できます。
+            </div>
+
+            <button
+              class="btn primary"
+              onclick="castFinalSpell()"
+            >
+              ✨ 最終魔法を唱える
+            </button>
+
+          </div>
+        `
+        :
+        `
+          <div class="card">
+
+            <div class="notice warning">
+              まだ卒業魔法の条件を
+              満たしていません。<br><br>
+
+              必要条件：<br>
+              ・6つの魔法記録<br>
+              ・第一魔法試験クリア
+            </div>
+
+          </div>
+        `
+      }
+
+      <button class="btn ghost" onclick="go('game')">
+        ← 戻る
+      </button>
+
+    </div>
+  `;
+}
+
+function castFinalSpell(){
+
+  if(
+    state.discoveredCodes.length < 6 ||
+    state.solved < 1
+  ){
+
+    toast(
+      "まだ魔法の材料が足りません。"
+    );
+
+    return;
+  }
+
+  state.finalUnlocked = true;
+  save();
+
+  go("grad");
+}
+
+/* ============================================================
+   GRADUATION
+   ============================================================ */
+
+function gradPage(){
+
+  if(!state.finalUnlocked){
+    go("final");
+    return "";
+  }
+
+  state.graduated = true;
+  save();
+
+  if(timerInterval){
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+
+  return `
+    <div class="content center">
+
+      <div class="crest">
+        🎓
+      </div>
+
+      <div class="kicker">
+        Graduation Approved
+      </div>
+
+      <h1
+        class="title"
+        style="font-size:52px"
+      >
+        GRADUATED
+      </h1>
+
+      <p class="subtitle">
+        おめでとうございます、
+        ${esc(state.player)}。<br>
+        あなたは
+        <b>MAGIA ACADEMY</b>
+        を卒業しました。
+      </p>
+
+      <div class="card glow">
+
+        <div class="big">
+          🏆
+        </div>
+
+        <h2>
+          TEAM ${String(state.team).padStart(2,"0")}
+        </h2>
+
+        <p class="good">
+          卒業資格：認定
+        </p>
+
+        <p class="muted">
+          魔法適性：
+          ${roles[state.role].name}
+        </p>
+
+        <p class="muted">
+          取得魔導片：
+          ${roles[state.role].fragment}
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <div class="final-rune">
+          月 → 星 → 太陽
+        </div>
+
+        <p class="desc">
+          失われた卒業魔法は復元された。
+          校門が開き、あなたたちは
+          元の世界へ帰ることができる。
+        </p>
+
+      </div>
+
+      <button
+        class="btn primary"
+        onclick="showCertificate()"
+      >
+        📜 卒業証書を見る
+      </button>
+
+      <button
+        class="btn ghost"
+        onclick="resetGame(true)"
+      >
+        もう一度プレイ
+      </button>
+
+    </div>
+  `;
+}
+
+function showCertificate(){
+
+  const modal =
+    document.createElement("div");
+
+  modal.className = "modal";
+
+  modal.innerHTML = `
+
+    <div class="modal-box center">
+
+      <div class="crest">
+        🦉
+      </div>
+
+      <div class="kicker">
+        MAGIA ACADEMY
+      </div>
+
+      <h2>
+        卒業証書
+      </h2>
+
+      <p class="desc">
+        ${esc(state.player)} 殿
+      </p>
+
+      <div class="card gold">
+
+        <h3>
+          MAGIA ACADEMY
+        </h3>
+
+        <p>
+          魔法学院卒業資格
+        </p>
+
+        <p class="good">
+          正式認定
+        </p>
+
+        <small class="muted">
+          TEAM ${String(state.team).padStart(2,"0")}
+        </small>
+
+      </div>
+
+      <button
+        class="btn primary"
+        onclick="this.closest('.modal').remove()"
+      >
+        閉じる
+      </button>
+
+    </div>
+
+  `;
+
+  document.body.appendChild(modal);
+}
+
+/* ============================================================
+   SETTINGS
+   ============================================================ */
+
+function settingsPage(){
+
+  const notificationStatus =
+    "Notification" in window
+      ? Notification.permission
+      : "unsupported";
+
+  return `
+    <div class="content">
+
+      <div class="kicker">
+        Academy Settings
+      </div>
+
+      <h2>⚙️ 設定</h2>
+
+      <div class="card">
+
+        <b>🔔 デスクトップ通知</b>
+
+        <p class="muted">
+          現在：
+          ${notificationStatus}
+        </p>
+
+        <button
+          class="btn ghost"
+          onclick="enableNotifications()"
+        >
+          通知を許可する
+        </button>
+
+      </div>
+
+      <div class="card">
+
+        <b>💾 セーブデータ</b>
+
+        <p class="muted">
+          現在の進行状況は
+          このブラウザに保存されています。
+        </p>
+
+        <button
+          class="btn danger"
+          onclick="confirmReset()"
+        >
+          セーブデータを削除
+        </button>
+
+      </div>
+
+      <div class="card">
+
+        <b>MAGIA ACADEMY</b>
+
+        <p class="muted">
+          Halloween Special<br>
+          Standalone Edition
+        </p>
+
+      </div>
+
+      <button class="btn ghost" onclick="go('game')">
+        ← 戻る
+      </button>
+
+    </div>
+  `;
+}
+
+/* ============================================================
+   RESET / RESUME
+   ============================================================ */
+
+function confirmReset(){
+
+  const ok =
+    confirm(
+      "現在のゲーム進行をすべて削除します。\nよろしいですか？"
+    );
+
+  if(ok){
+    resetGame(false);
+  }
+}
+
+function resetGame(returnHome){
+
+  stopScanner();
+
+  if(timerInterval){
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+
+  state = {
+    ...defaultState
+  };
+
+  localStorage.removeItem(STORAGE_KEY);
+
+  if(returnHome){
+    render();
+  }else{
+    go("home");
+  }
+}
+
+function resumeGame(){
+
+  if(
+    !state.started ||
+    !state.player
+  ){
+
+    toast(
+      "保存されたゲームデータがありません。"
+    );
+
+    setTimeout(()=>{
+      go("enroll");
+    },500);
+
+    return;
+  }
+
+  startTimer();
+  go(state.graduated ? "grad" : "game");
+}
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+
+function toast(message){
+
+  const old =
+    document.querySelector(".toast");
+
+  if(old){
+    old.remove();
+  }
+
+  const x =
+    document.createElement("div");
+
+  x.className = "toast";
+  x.textContent = message;
+
+  document.body.appendChild(x);
+
+  setTimeout(()=>{
+    x.remove();
+  },2500);
+}
+
+/* ============================================================
+   KEYBOARD SHORTCUTS
+   ============================================================ */
+
+document.addEventListener("keydown",e=>{
+
+  if(e.key === "Escape"){
+    stopScanner();
+  }
+
+});
+
+/* ============================================================
+   START
+   ============================================================ */
+
+render();
+
+if(
+  state.started &&
+  !state.graduated &&
+  state.time > 0
+){
+  startTimer();
+}
+
+</script>
+
+</body>
+</html>
